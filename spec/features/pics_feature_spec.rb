@@ -32,4 +32,26 @@ feature 'pics' do
       expect(current_path).to eq '/pics'
     end
   end
+
+  # context 'viewing pics' do
+  #   let!(:newbie) { Pic.create }
+
+  #   scenario 'lets a user view a pic' do
+  #     visit '/pics'
+  #     click_link 'newbie'
+  #     expect(page).to have_content 'newbie'
+  #     expect(current_path).to eq "/pics/#{newbie.id}"
+  #   end
+  # end
+
+  context 'deleting pics' do
+    before { Pic.create message: 'this is new' }
+
+    scenario 'removes a pic when a user clicks a delete link' do
+      visit '/pics'
+      click_link 'delete this is new'
+      expect(page).not_to have_content 'this is new'
+      expect(page).to have_content 'pic deleted successfully'
+    end
+  end
 end

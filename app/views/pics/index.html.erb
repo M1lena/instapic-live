@@ -1,9 +1,15 @@
 <% if @pics.any? %>
   <% @pics.each do |pic| %>
-    <h2> <%= pic.message %> </h2>
-    <% end %>
+<!-- ADD A FRAME HERE SO EACH PIC IS ON A NEW LINE! -->
+      <div>
+          <%= link_to pic.message, pic_path(pic) %>
+          <%= link_to "delete #{pic.message}", pic_path(pic), method: :delete %>
+          <% end %>
+      </div>
+
   <% else %>
-    <h1> no pics yet! </h1>
+    <h3> no pics yet! </h3>
 <% end %>
 
-<a href=pics/new> add a pic </a>
+<br> <a href=pics/new> add a pic </a>
+
