@@ -1,6 +1,6 @@
-class CreatePics < ActiveRecord::Migration
+class CreatePosts < ActiveRecord::Migration
   def change
-    create_table :pics do |t|
+    create_table :posts do |t|
       t.string :message
       t.integer :likes
 
