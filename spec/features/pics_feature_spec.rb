@@ -15,7 +15,7 @@ feature 'pics' do
     end
 
     scenario 'display pic message' do
-      visit '/pics'
+      visit '/'
       expect(page).to have_content('today is Wednesday')
       expect(page).not_to have_content('no pics yet!')
     end
@@ -24,7 +24,7 @@ feature 'pics' do
   context 'creating pic posts' do
     scenario 'prompts user to fill out a message,
               then displays the new pic message' do
-      visit '/pics'
+      visit '/'
       click_link 'add a pic'
       fill_in 'Message', with: 'today is Wednesday'
       click_button 'Create Pic'
@@ -33,18 +33,18 @@ feature 'pics' do
     end
   end
 
-  # context 'viewing pics' do
-  #   let!(:newbie) { Pic.create }
+  context 'viewing pics and messages' do
+    let!(:newbie) { Pic.create(message: 'newbie')}
 
-  #   scenario 'lets a user view a pic' do
-  #     visit '/pics'
-  #     click_link 'newbie'
-  #     expect(page).to have_content 'newbie'
-  #     expect(current_path).to eq "/pics/#{newbie.id}"
-  #   end
-  # end
+    scenario 'lets a user view a pic message' do
+      visit '/'
+      click_link 'newbie'
+      expect(page).to have_content 'newbie'
+      expect(current_path).to eq "/pics/#{newbie.id}"
+    end
+  end
 
-  context 'deleting pics' do
+  context 'deleting pics and messages' do
     before { Pic.create message: 'this is new' }
 
     scenario 'removes a pic when a user clicks a delete link' do
