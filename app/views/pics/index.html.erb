@@ -1,2 +1,9 @@
-no pics yet!
+<% if @pics.any? %>
+  <% @pics.each do |pic| %>
+    <h2> <%= pic.message %> </h2>
+    <% end %>
+  <% else %>
+    <h1> no pics yet! </h1>
+<% end %>
+
 <a href='#'> add a pic </a>
