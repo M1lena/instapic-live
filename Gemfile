@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'rake'
   gem 'shoulda'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
