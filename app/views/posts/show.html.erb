@@ -1,3 +1,16 @@
+<!-- <p> <%= @post.message %> </p> -->
+
 <p> <%= @post.message %> </p>
-<p> <%= @post.comment %> </p>
+  <% if @post.comments.any? %>
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <li>
+          <%= comment.comments %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p> no comments here! </p>
+  <% end %>
+
 <a href=/posts> back to all posts </a>
