@@ -3,6 +3,7 @@
 <!-- ADD A FRAME HERE SO EACH post IS ON A NEW LINE! -->
       <div>
           <%= link_to post.message, post_path(post) %>
+          <%= link_to 'comment', new_post_comment_path(post) %>
           <%= link_to "delete #{post.message}", post_path(post), method: :delete %>
           <% end %>
       </div>

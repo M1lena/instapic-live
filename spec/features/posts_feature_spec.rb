@@ -34,7 +34,7 @@ feature 'posts' do
   end
 
   context 'viewing posts and their messages' do
-    let!(:newbie) { Post.create(message: 'newbie') }
+    let!(:newbie) { Post.create message: 'newbie' }
 
     scenario 'lets a user view a post message' do
       visit '/'
