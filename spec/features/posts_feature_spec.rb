@@ -29,7 +29,7 @@ feature 'posts' do
       fill_in 'Message', with: 'today is Wednesday'
       click_button 'Create Post'
       expect(page).to have_content 'today is Wednesday'
-      expect(current_path).to eq '/posts'
+      expect(current_path).to eq '/'
     end
   end
 
