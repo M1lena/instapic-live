@@ -8,3 +8,8 @@ This site is under construction. Still adding features and no styling/CSS has be
 https://instapic-live.herokuapp.com/
 
 Last deployed to Heroku on 14 July.
+
+To-do:
+-- Add image attachments
+-- Modify CURD parameters
+-- Connect to S3
