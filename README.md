@@ -6,3 +6,5 @@ Welcome to Instapic!
 This site is under construction. Still adding features and no styling/CSS has been added yet.
 
 https://instapic-live.herokuapp.com/
+
+Last deployed to Heroku on 14 July.
